@@ -11,7 +11,7 @@
     <AssemblyName>PRINV</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -29,6 +29,7 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x64</PlatformTarget>
@@ -41,7 +42,7 @@
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
@@ -91,6 +92,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Form BARANG.vb">
       <SubType>Form</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -102,11 +104,9 @@
     </Compile>
     <Compile Include="Form MENUUTAMA.Designer.vb">
       <DependentUpon>Form MENUUTAMA.vb</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Form MENUUTAMA.vb">
       <SubType>Form</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Form SUPPLIER.Designer.vb">
       <DependentUpon>Form SUPPLIER.vb</DependentUpon>
@@ -146,6 +146,18 @@
     <Compile Include="Form Login.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form HAKAKSES.Designer.vb">
+      <DependentUpon>Form HAKAKSES.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form HAKAKSES.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPemakai.designer.vb">
+      <DependentUpon>FormPemakai.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPemakai.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -177,12 +189,14 @@
       <DependentUpon>Form CUSTOMER.vb</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form HAKAKSES.resx">
+      <DependentUpon>Form HAKAKSES.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form Login.resx">
       <DependentUpon>Form Login.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form MENUUTAMA.resx">
       <DependentUpon>Form MENUUTAMA.vb</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Form SUPPLIER.resx">
       <DependentUpon>Form SUPPLIER.vb</DependentUpon>
@@ -191,6 +205,9 @@
     <EmbeddedResource Include="Form JUAL.resx">
       <DependentUpon>Form JUAL.vb</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPemakai.resx">
+      <DependentUpon>FormPemakai.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -238,6 +255,9 @@
     <Content Include="DBINV.mdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

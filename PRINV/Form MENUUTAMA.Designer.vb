@@ -39,15 +39,16 @@ Partial Class Form_MENUUTAMA
         Me.CETAKPENJUALANToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SELESAIToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.HAKAKSESToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PDBARANG = New System.Drawing.Printing.PrintDocument()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
         Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuStrip1.GripMargin = New System.Windows.Forms.Padding(2, 2, 0, 2)
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MASTERToolStripMenuItem, Me.TRANSAKSIToolStripMenuItem, Me.CETAKToolStripMenuItem, Me.SELESAIToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MASTERToolStripMenuItem, Me.TRANSAKSIToolStripMenuItem, Me.CETAKToolStripMenuItem, Me.HAKAKSESToolStripMenuItem, Me.SELESAIToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1074, 40)
@@ -146,6 +147,12 @@ Partial Class Form_MENUUTAMA
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
+        'HAKAKSESToolStripMenuItem
+        '
+        Me.HAKAKSESToolStripMenuItem.Name = "HAKAKSESToolStripMenuItem"
+        Me.HAKAKSESToolStripMenuItem.Size = New System.Drawing.Size(143, 36)
+        Me.HAKAKSESToolStripMenuItem.Text = "HAKAKSES"
+        '
         'Form_MENUUTAMA
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -180,4 +187,6 @@ Partial Class Form_MENUUTAMA
     Friend WithEvents CETAKPENJUALANToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SELESAIToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents HAKAKSESToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PDBARANG As Printing.PrintDocument
 End Class

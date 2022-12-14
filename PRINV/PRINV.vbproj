@@ -158,6 +158,12 @@
     <Compile Include="Form CETAK FAKTUR PEMBELIAN.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form CETAK PEMBELIAN PERPERIODE.Designer.vb">
+      <DependentUpon>Form CETAK PEMBELIAN PERPERIODE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form CETAK PEMBELIAN PERPERIODE.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormPemakai.designer.vb">
       <DependentUpon>FormPemakai.vb</DependentUpon>
     </Compile>
@@ -214,6 +220,9 @@
     <EmbeddedResource Include="Form JUAL.resx">
       <DependentUpon>Form JUAL.vb</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form CETAK PEMBELIAN PERPERIODE.resx">
+      <DependentUpon>Form CETAK PEMBELIAN PERPERIODE.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPemakai.resx">
       <DependentUpon>FormPemakai.vb</DependentUpon>

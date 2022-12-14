@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.PRINV.Form_MENUUTAMA
+            Me.MainForm = Global.PRINV.FormCETAKFAKTURPEMBELIAN
         End Sub
     End Class
 End Namespace

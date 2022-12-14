@@ -152,6 +152,12 @@
     <Compile Include="Form HAKAKSES.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form CETAK FAKTUR PEMBELIAN.Designer.vb">
+      <DependentUpon>Form CETAK FAKTUR PEMBELIAN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form CETAK FAKTUR PEMBELIAN.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormPemakai.designer.vb">
       <DependentUpon>FormPemakai.vb</DependentUpon>
     </Compile>
@@ -184,6 +190,9 @@
     <EmbeddedResource Include="FORM BELI.resx">
       <DependentUpon>FORM BELI.vb</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form CETAK FAKTUR PEMBELIAN.resx">
+      <DependentUpon>Form CETAK FAKTUR PEMBELIAN.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form CUSTOMER.resx">
       <DependentUpon>Form CUSTOMER.vb</DependentUpon>

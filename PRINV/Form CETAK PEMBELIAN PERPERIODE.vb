@@ -122,8 +122,8 @@ Public Class FormCTKPMBELIANPERPERIODE
         End While
         With e.Graphics
             .DrawLine(Pens.Black, 10, BARIS + 5, 800, BARIS + 5)
-            .DrawString("TOTAL :", FTDT, Brushes.Black, 675, BARIS + 10, KANAN)
-            .DrawString(Format(TOTAL, "#,#"), FTDT, Brushes.Black, 775, BARIS + 10, KANAN)
+            .DrawString("TOTAL :", FTDT, Brushes.Black, 500, BARIS + 10, KANAN)
+            .DrawString(Format(TOTAL, "#,#"), FTDT, Brushes.Black, 575, BARIS + 10, KANAN)
             .DrawLine(Pens.Black, 10, BARIS + 30, 800, BARIS + 30)
         End With
         DR.Close()

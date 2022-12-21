@@ -81,4 +81,22 @@ Public Class Form_MENUUTAMA
     Private Sub CETAKBARANGToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CETAKBARANGToolStripMenuItem.Click
         PDBARANG.Print()
     End Sub
+    Private Sub CETAKFAKTURPEMBELIANToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CETAKFAKTURPEMBELIANToolStripMenuItem.Click
+        FormCETAKFAKTURPEMBELIAN.ShowDialog()
+    End Sub
+    Private Sub CETAKPEMBELIANPERPERIODEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CETAKPEMBELIANPERPERIODEToolStripMenuItem.Click
+        FormCTKPMBELIANPERPERIODE.ShowDialog()
+    End Sub
+    Private Sub CETAKPENJUALANPERPERIODEToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CETAKPENJUALANPERPERIODEToolStripMenuItem.Click
+        FormCTKJLPERPERIODE.ShowDialog()
+    End Sub
+    Private Sub CETAKPENJUALANPERNOTAToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CETAKPENJUALANPERNOTAToolStripMenuItem.Click
+        FormCKTNOTA.ShowDialog()
+    End Sub
+    Private Sub HAKAKSESToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HAKAKSESToolStripMenuItem.Click
+        FormHAKAKSES.ShowDialog()
+    End Sub
+    Private Sub DATAPEMAKAIToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DATAPEMAKAIToolStripMenuItem.Click
+        FormPemakai.ShowDialog()
+    End Sub
 End Class

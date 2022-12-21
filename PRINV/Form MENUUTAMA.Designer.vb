@@ -36,17 +36,23 @@ Partial Class Form_MENUUTAMA
         Me.CETAKSUPPLIERToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CETAKCUSTOMERToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CETAKPEMBELIANToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CETAKPEMBELIANPERPERIODEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CETAKFAKTURPEMBELIANToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CETAKPENJUALANToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CETAKPENJUALANPERPERIODEToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CETAKPENJUALANPERNOTAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HAKAKSESToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SELESAIToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.HAKAKSESToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PDBARANG = New System.Drawing.Printing.PrintDocument()
+        Me.DATAPEMAKAIToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
         Me.MenuStrip1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MenuStrip1.GripMargin = New System.Windows.Forms.Padding(2, 2, 0, 2)
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(24, 24)
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MASTERToolStripMenuItem, Me.TRANSAKSIToolStripMenuItem, Me.CETAKToolStripMenuItem, Me.HAKAKSESToolStripMenuItem, Me.SELESAIToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
@@ -56,7 +62,7 @@ Partial Class Form_MENUUTAMA
         '
         'MASTERToolStripMenuItem
         '
-        Me.MASTERToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DATABARANGToolStripMenuItem, Me.DATASUPPLIERToolStripMenuItem, Me.DATACUSTOMERToolStripMenuItem})
+        Me.MASTERToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DATABARANGToolStripMenuItem, Me.DATASUPPLIERToolStripMenuItem, Me.DATACUSTOMERToolStripMenuItem, Me.DATAPEMAKAIToolStripMenuItem})
         Me.MASTERToolStripMenuItem.Name = "MASTERToolStripMenuItem"
         Me.MASTERToolStripMenuItem.Size = New System.Drawing.Size(119, 36)
         Me.MASTERToolStripMenuItem.Text = "MASTER"
@@ -125,15 +131,47 @@ Partial Class Form_MENUUTAMA
         '
         'CETAKPEMBELIANToolStripMenuItem
         '
+        Me.CETAKPEMBELIANToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CETAKPEMBELIANPERPERIODEToolStripMenuItem, Me.CETAKFAKTURPEMBELIANToolStripMenuItem})
         Me.CETAKPEMBELIANToolStripMenuItem.Name = "CETAKPEMBELIANToolStripMenuItem"
         Me.CETAKPEMBELIANToolStripMenuItem.Size = New System.Drawing.Size(319, 40)
         Me.CETAKPEMBELIANToolStripMenuItem.Text = "CETAK PEMBELIAN"
         '
+        'CETAKPEMBELIANPERPERIODEToolStripMenuItem
+        '
+        Me.CETAKPEMBELIANPERPERIODEToolStripMenuItem.Name = "CETAKPEMBELIANPERPERIODEToolStripMenuItem"
+        Me.CETAKPEMBELIANPERPERIODEToolStripMenuItem.Size = New System.Drawing.Size(453, 40)
+        Me.CETAKPEMBELIANPERPERIODEToolStripMenuItem.Text = "CETAK PEMBELIAN PERPERIODE"
+        '
+        'CETAKFAKTURPEMBELIANToolStripMenuItem
+        '
+        Me.CETAKFAKTURPEMBELIANToolStripMenuItem.Name = "CETAKFAKTURPEMBELIANToolStripMenuItem"
+        Me.CETAKFAKTURPEMBELIANToolStripMenuItem.Size = New System.Drawing.Size(453, 40)
+        Me.CETAKFAKTURPEMBELIANToolStripMenuItem.Text = "CETAK FAKTUR PEMBELIAN"
+        '
         'CETAKPENJUALANToolStripMenuItem
         '
+        Me.CETAKPENJUALANToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CETAKPENJUALANPERPERIODEToolStripMenuItem, Me.CETAKPENJUALANPERNOTAToolStripMenuItem})
         Me.CETAKPENJUALANToolStripMenuItem.Name = "CETAKPENJUALANToolStripMenuItem"
         Me.CETAKPENJUALANToolStripMenuItem.Size = New System.Drawing.Size(319, 40)
         Me.CETAKPENJUALANToolStripMenuItem.Text = "CETAK PENJUALAN"
+        '
+        'CETAKPENJUALANPERPERIODEToolStripMenuItem
+        '
+        Me.CETAKPENJUALANPERPERIODEToolStripMenuItem.Name = "CETAKPENJUALANPERPERIODEToolStripMenuItem"
+        Me.CETAKPENJUALANPERPERIODEToolStripMenuItem.Size = New System.Drawing.Size(457, 40)
+        Me.CETAKPENJUALANPERPERIODEToolStripMenuItem.Text = "CETAK PENJUALAN PERPERIODE"
+        '
+        'CETAKPENJUALANPERNOTAToolStripMenuItem
+        '
+        Me.CETAKPENJUALANPERNOTAToolStripMenuItem.Name = "CETAKPENJUALANPERNOTAToolStripMenuItem"
+        Me.CETAKPENJUALANPERNOTAToolStripMenuItem.Size = New System.Drawing.Size(457, 40)
+        Me.CETAKPENJUALANPERNOTAToolStripMenuItem.Text = "CETAK PENJUALAN PERNOTA"
+        '
+        'HAKAKSESToolStripMenuItem
+        '
+        Me.HAKAKSESToolStripMenuItem.Name = "HAKAKSESToolStripMenuItem"
+        Me.HAKAKSESToolStripMenuItem.Size = New System.Drawing.Size(143, 36)
+        Me.HAKAKSESToolStripMenuItem.Text = "HAKAKSES"
         '
         'SELESAIToolStripMenuItem
         '
@@ -147,11 +185,14 @@ Partial Class Form_MENUUTAMA
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
-        'HAKAKSESToolStripMenuItem
+        'PDBARANG
         '
-        Me.HAKAKSESToolStripMenuItem.Name = "HAKAKSESToolStripMenuItem"
-        Me.HAKAKSESToolStripMenuItem.Size = New System.Drawing.Size(143, 36)
-        Me.HAKAKSESToolStripMenuItem.Text = "HAKAKSES"
+        '
+        'DATAPEMAKAIToolStripMenuItem
+        '
+        Me.DATAPEMAKAIToolStripMenuItem.Name = "DATAPEMAKAIToolStripMenuItem"
+        Me.DATAPEMAKAIToolStripMenuItem.Size = New System.Drawing.Size(302, 40)
+        Me.DATAPEMAKAIToolStripMenuItem.Text = "DATA PEMAKAI"
         '
         'Form_MENUUTAMA
         '
@@ -189,4 +230,9 @@ Partial Class Form_MENUUTAMA
     Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
     Friend WithEvents HAKAKSESToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PDBARANG As Printing.PrintDocument
+    Friend WithEvents CETAKPEMBELIANPERPERIODEToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CETAKFAKTURPEMBELIANToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CETAKPENJUALANPERPERIODEToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CETAKPENJUALANPERNOTAToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents DATAPEMAKAIToolStripMenuItem As ToolStripMenuItem
 End Class

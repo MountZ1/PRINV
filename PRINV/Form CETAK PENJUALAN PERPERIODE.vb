@@ -2,7 +2,7 @@
 Imports System.Data.OleDb
 Imports System.Drawing.Printing
 
-Public Class FormCTKPMBELIANPERPERIODE
+Public Class FormCTKJLPERPERIODE
     Public SQLSTR As String
     Public KONEKSI As New OleDb.OleDbConnection
     Public CMD As New OleDb.OleDbCommand
@@ -21,13 +21,13 @@ Public Class FormCTKPMBELIANPERPERIODE
     Dim TOTAL As Double
     Dim XMULAI As String
     Dim XSAMPAI As String
-    Private Sub FormCTKPMBELIANPERPERIODE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub FormCTKJLPERPERIODE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LOKASI = System.Environment.CurrentDirectory
         KONEKSISTRING = "Provider = Microsoft.ACE.OLEDB.12.0;Data Source=" & LOKASI & "\DBINV.mdb"
         KONEKSI = New OleDb.OleDbConnection(KONEKSISTRING)
         KONEKSI.Open()
 
-        SQLSTR = "SELECT DISTINCT TANGGAL FROM BELI"
+        SQLSTR = "SELECT DISTINCT TANGGAL FROM JUAL"
         CMD = New OleDbCommand(SQLSTR, KONEKSI)
         DR = CMD.ExecuteReader
         TXTMULAI.Items.Clear()
@@ -44,13 +44,13 @@ Public Class FormCTKPMBELIANPERPERIODE
         TXTMULAI.Focus()
     End Sub
     Sub DGV()
-        SQLSTR = "SELECT * FROM QUERYBELI WHERE FAKTUR IS NULL"
+        SQLSTR = "SELECT * FROM QUERYJUAL WHERE NOTA IS NULL"
         DA = New OleDbDataAdapter(SQLSTR, KONEKSI)
         DT.Clear()
         DA.Fill(DT)
         DataGridView1.DataSource = DT
     End Sub
-    Private Sub FormCTKPMBELIANPERPERIODE_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+    Private Sub FormCTKJLPERPERIODE_Activated(sender As Object, e As EventArgs) Handles Me.Activated
         KOSONG()
         DGV()
     End Sub
@@ -58,7 +58,7 @@ Public Class FormCTKPMBELIANPERPERIODE
         If TXTTANGGAL.Text <> "" Then
             XMULAI = Strings.Mid(TXTMULAI.Text, 4, 2) & "/" & Strings.Left(TXTMULAI.Text, 2) & "/" & Strings.Right(TXTMULAI.Text, 4)
             XSAMPAI = Strings.Mid(TXTTANGGAL.Text, 4, 2) & "/" & Strings.Left(TXTTANGGAL.Text, 2) & "/" & Strings.Right(TXTTANGGAL.Text, 4)
-            SQLSTR = "SELECT * FROM QUERYBELI WHERE TANGGAL BETWEEN #" & XMULAI & "# AND #" & XSAMPAI & "#"
+            SQLSTR = "SELECT * FROM QUERYJUAL WHERE TANGGAL BETWEEN #" & XMULAI & "# AND #" & XSAMPAI & "#"
             DA = New OleDbDataAdapter(SQLSTR, KONEKSI)
             DT.Clear()
             DA.Fill(DT)
@@ -66,32 +66,32 @@ Public Class FormCTKPMBELIANPERPERIODE
         End If
     End Sub
     Private Sub TXTTANGGAL_SelectedValueChanged(sender As Object, e As EventArgs) Handles TXTTANGGAL.SelectedValueChanged
-        If TXTMULAI.Text <> "" Then
+        If TXTTANGGAL.Text <> "" Then
             XMULAI = Strings.Mid(TXTMULAI.Text, 4, 2) & "/" & Strings.Left(TXTMULAI.Text, 2) & "/" & Strings.Right(TXTMULAI.Text, 4)
             XSAMPAI = Strings.Mid(TXTTANGGAL.Text, 4, 2) & "/" & Strings.Left(TXTTANGGAL.Text, 2) & "/" & Strings.Right(TXTTANGGAL.Text, 4)
-            SQLSTR = "SELECT * FROM QUERYBELI WHERE TANGGAL BETWEEN #" & XMULAI & "# AND #" & XSAMPAI & "#"
+            SQLSTR = "SELECT * FROM QUERYJUAL WHERE TANGGAL BETWEEN #" & XMULAI & "# AND #" & XSAMPAI & "#"
             DA = New OleDbDataAdapter(SQLSTR, KONEKSI)
             DT.Clear()
             DA.Fill(DT)
             DataGridView1.DataSource = DT
         End If
     End Sub
-    Private Sub PDBELIPERIODE_PrintPage(sender As Object, e As PrintPageEventArgs) Handles PDBELIPERIODE.PrintPage
+    Private Sub PDJUALPERPERIODE_PrintPage(sender As Object, e As PrintPageEventArgs) Handles PDJUALPERPERIODE.PrintPage
         KIRI.Alignment = StringAlignment.Near
         TENGAH.Alignment = StringAlignment.Center
         KANAN.Alignment = StringAlignment.Far
 
         With e.Graphics
-            .DrawString("LAPORAN PEMBELIAN PERPERIODE", FTJDL, Brushes.Blue, 400, 25, TENGAH)
+            .DrawString("LAPORAN PENJUALAN PERPERIODE", FTJDL, Brushes.Blue, 400, 25, TENGAH)
             .DrawString("TANGGAL " & TXTMULAI.SelectedItem & " SAMPAI DENGAN " & TXTTANGGAL.SelectedItem, FTJDL, Brushes.Blue, 400, 50, TENGAH)
             .DrawLine(Pens.Black, 10, 95, 800, 95)
             .DrawString("NO.", FTDT, Brushes.Black, 50, 100, KANAN)
-            .DrawString("FAKTUR", FTDT, Brushes.Black, 60, 100, KIRI)
+            .DrawString("NOTA", FTDT, Brushes.Black, 60, 100, KIRI)
             .DrawString("TANGGAL", FTDT, Brushes.Black, 120, 100, KIRI)
-            .DrawString("NAMA SUPPLIER", FTDT, Brushes.Black, 210, 100, KIRI)
+            .DrawString("NAMA CUSTOMER", FTDT, Brushes.Black, 210, 100, KIRI)
             .DrawString("KODEBRG", FTDT, Brushes.Black, 350, 100, KIRI)
             .DrawString("NAMA BARANG", FTDT, Brushes.Black, 435, 100, KIRI)
-            .DrawString("HRG BELI", FTDT, Brushes.Black, 620, 100, KANAN)
+            .DrawString("HRG JUAL", FTDT, Brushes.Black, 620, 100, KANAN)
             .DrawString("JUMLAH", FTDT, Brushes.Black, 700, 100, KANAN)
             .DrawString("TOTAL", FTDT, Brushes.Black, 775, 100, KANAN)
             .DrawLine(Pens.Black, 10, 125, 800, 125)
@@ -101,18 +101,18 @@ Public Class FormCTKPMBELIANPERPERIODE
         TOTAL = 0
         XMULAI = Strings.Mid(TXTMULAI.SelectedItem, 4, 2) & "/" & Strings.Left(TXTMULAI.SelectedItem, 2) & "/" & Strings.Right(TXTMULAI.SelectedItem, 4)
         XSAMPAI = Strings.Mid(TXTTANGGAL.SelectedItem, 4, 2) & "/" & Strings.Left(TXTTANGGAL.SelectedItem, 2) & "/" & Strings.Right(TXTTANGGAL.SelectedItem, 4)
-        SQLSTR = "SELECT * FROM QUERYBELI WHERE TANGGAL BETWEEN #" & XMULAI & "# AND #" & XSAMPAI & "#"
+        SQLSTR = "SELECT * FROM QUERYJUAL WHERE TANGGAL BETWEEN #" & XMULAI & "# AND #" & XSAMPAI & "#"
         CMD = New OleDbCommand(SQLSTR, KONEKSI)
         DR = CMD.ExecuteReader
         While DR.Read
             With e.Graphics
                 .DrawString(NOMOR, FTDT, Brushes.Black, 50, BARIS, KANAN)
-                .DrawString(DR("FAKTUR"), FTDT, Brushes.Black, 60, BARIS, KIRI)
+                .DrawString(DR("NOTA"), FTDT, Brushes.Black, 60, BARIS, KIRI)
                 .DrawString(DR("TANGGAL"), FTDT, Brushes.Black, 120, BARIS, KIRI)
-                .DrawString(DR("NAMASP"), FTDT, Brushes.Black, 210, BARIS, KIRI)
+                .DrawString(DR("NAMACS"), FTDT, Brushes.Black, 210, BARIS, KIRI)
                 .DrawString(DR("KODEBRG"), FTDT, Brushes.Black, 350, BARIS, KIRI)
                 .DrawString(DR("NAMABRG"), FTDT, Brushes.Black, 435, BARIS, KIRI)
-                .DrawString(Format(DR("HRGBELI"), "#,#"), FTDT, Brushes.Black, 620, BARIS, KANAN)
+                .DrawString(Format(DR("HRGJUAL"), "#,#"), FTDT, Brushes.Black, 620, BARIS, KANAN)
                 .DrawString(DR("JUMLAH"), FTDT, Brushes.Black, 675, BARIS, KANAN)
                 .DrawString(Format(DR("TOTAL"), "#,#"), FTDT, Brushes.Black, 775, BARIS, KANAN)
                 NOMOR = NOMOR + 1
@@ -129,9 +129,11 @@ Public Class FormCTKPMBELIANPERPERIODE
         DR.Close()
     End Sub
     Private Sub BTPREVIEW_Click(sender As Object, e As EventArgs) Handles BTPREVIEW.Click
-        PDBELIPERIODE.Print()
+        PDJUALPERPERIODE.Print()
+
     End Sub
     Private Sub BTCLOSE_Click(sender As Object, e As EventArgs) Handles BTCLOSE.Click
         Close()
+
     End Sub
 End Class

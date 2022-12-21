@@ -27,15 +27,18 @@ Public Class FormHAKAKSES
     Private Sub DataGridView1_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellEndEdit
         Dim A As Integer
         For A = 1 To DataGridView1.Rows.Count - 1
-            SQLSTR = "UPDATE HAKAKSES SET MASTER=" & DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(1).Value & ",TRANSAKSI=" & DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(2).Value & ",CETAK" & DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(3).Value & ",HAKAKSES" & DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(4).Value & ",SELESAI" & DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(5).Value & "WHERE JABATAN" & DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(0).Value & "'"
+            SQLSTR = "UPDATE HAKAKSES SET MASTER=" & DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(1).Value &
+                ",TRANSAKSI=" & DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(2).Value &
+                ",CETAK=" & DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(3).Value &
+                ",HAKAKSES=" & DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(4).Value &
+                ",SELESAI=" & DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(5).Value &
+                " WHERE JABATAN='" & DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(0).Value & "'"
             CMD = New OleDb.OleDbCommand(SQLSTR, CONN)
             CMD.ExecuteNonQuery()
-
         Next
-        CONN.Close()
-        Close()
     End Sub
     Private Sub BTCLOSE_Click(sender As Object, e As EventArgs) Handles BTCLOSE.Click
+        CONN.Close()
         Me.Close()
     End Sub
 End Class

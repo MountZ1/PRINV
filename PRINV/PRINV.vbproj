@@ -170,6 +170,12 @@
     <Compile Include="Form CETAK PENJUALAN NOTA.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form CETAK PENJUALAN PERPERIODE.Designer.vb">
+      <DependentUpon>Form CETAK PENJUALAN PERPERIODE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form CETAK PENJUALAN PERPERIODE.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormPemakai.designer.vb">
       <DependentUpon>FormPemakai.vb</DependentUpon>
     </Compile>
@@ -208,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form CETAK PENJUALAN NOTA.resx">
       <DependentUpon>Form CETAK PENJUALAN NOTA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form CETAK PENJUALAN PERPERIODE.resx">
+      <DependentUpon>Form CETAK PENJUALAN PERPERIODE.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form CUSTOMER.resx">
       <DependentUpon>Form CUSTOMER.vb</DependentUpon>
